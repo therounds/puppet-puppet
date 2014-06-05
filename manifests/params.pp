@@ -1,8 +1,6 @@
 # Default parameters
 class puppet::params {
 
-  include foreman::params
-
   # Basic config
   $version             = 'present'
   $user                = 'puppet'
@@ -132,4 +130,10 @@ class puppet::params {
 
   # Puppet service name
   $service_name = 'puppet'
+
+  # Foreman parameters
+  $server_foreman        = true
+  $server_facts          = true
+  $server_puppet_basedir = undef
+  $server_foreman_url    = "https://${::fqdn}"
 }
