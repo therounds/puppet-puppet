@@ -17,7 +17,8 @@ class puppet::server::passenger (
 ) {
   include ::puppet::server::rack
   include ::apache
-  include ::apache::mod::passenger
+  # guess who doesn't ship with passenger packages. that's right, centos7
+  #include ::apache::mod::passenger
 
   case $::operatingsystem {
     Debian,Ubuntu: {
